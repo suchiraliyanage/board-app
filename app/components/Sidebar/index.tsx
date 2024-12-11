@@ -116,7 +116,7 @@ const Sibebar = () => {
                   Messages
                 </span>
               </div>
-              <span className={styles.badge}>3</span>
+              <span className={`${styles.badge} poppins-medium`}>3</span>
             </Link>
           </li>
           <li>

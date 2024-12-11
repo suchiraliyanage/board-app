@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './index.module.scss'
-import { LogoSvg, WhitePlusIcon } from '@/app/assets/svg/home'
+import { HeaderMoreActionIconsAsSvg, LogoSvg, SearchIcon, WhitePlusIcon } from '@/app/assets/svg/home'
 
 const MainHeader = () => {
   return (
@@ -13,11 +13,15 @@ const MainHeader = () => {
             Create new board
             <WhitePlusIcon />
           </button>
-          <input
-            type="text"
-            placeholder="Search tasks..."
-            className={styles.searchInput}
-          />
+          <div className={styles.searchInput}>
+            <SearchIcon />
+            <input
+                type="text"
+                placeholder="Search tasks..."
+            />
+          </div>
+          
+          <HeaderMoreActionIconsAsSvg />
         </div>
     </header>
   )
