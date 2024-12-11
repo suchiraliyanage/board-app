@@ -1,0 +1,174 @@
+.sidebar {
+    width: 288px;
+    background: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 24px 36px 24px;
+    height: 100%;
+  
+    >.sidebarHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 240px;
+      height: 64px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 2px solid #F4F5F6;
+      margin-bottom: 24px;
+      
+      >.workspaceMain {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        >.iconAndContent {
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          >.content {
+            >.subText {
+              font-size: 14px;
+              line-height: 24px;
+              color: #B1B5C3;
+            }
+            >.mainText {
+              font-size: 16px;
+              line-height: 24px;
+              color: #353945;
+            }
+          }
+        }
+      }
+    }
+  
+    &Nav {
+      flex-grow: 1;
+      ul {
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        padding: 0;
+        width: 240px;
+        gap: 14px;
+  
+        li {
+          border-radius: 8px;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+  
+          // &:hover {
+          //   background-color: #f0f0f0;
+          // }
+  
+          >.activeMenu {
+            border: 2px solid #F4F5F6;
+            border-radius: 8px;
+          }
+  
+          >.subMenu {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 12px;
+            border: 2px solid #F4F5F6;
+            border-radius: 8px;
+            align-items: flex-start;
+            justify-content: flex-start;
+  
+            .subMenuItem {
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+              align-items: center;
+              padding: 0px;
+  
+              >.subMenuIconAndText {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+  
+                >.subMenuItemText {
+                  font-size: 14px;
+                  line-height: 24px;
+                  color: #B1B5C3;
+                }
+      
+                >.subMenuItemTextActive {
+                  font-size: 14px;
+                  line-height: 24px;
+                  color: #3772FF;
+                }
+              }
+            }
+          }
+  
+          a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            border-radius: 5px;
+            align-items: center;
+            gap: 20px;
+            justify-content: space-between;
+            padding: 12px;
+  
+            >.iconAndText {
+              display: flex;
+              gap: 20px;
+              align-items: center;
+  
+              >.menuItemText {
+                font-size: 16px;
+                line-height: 24px;
+                color: #777E90;
+              }
+    
+              >.menuItemTextActive {
+                font-size: 16px;
+                line-height: 24px;
+                color: #3772FF;
+              }
+            }
+            >.badge {
+              width: 24px;
+              height: 24px;
+              background: #FF5C00;
+              color: #fff;
+              border-radius: 50%;
+              font-size: 12px;
+              line-height: 24px;
+              text-align: center;
+            }
+  
+          }
+        }
+      }
+    }
+  
+    &Footer {
+      margin-top: auto;
+  
+      .logoutButton {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        background: #353945;
+        color: #fff;
+        border: none;
+        padding: 12px;
+        gap: 20px;
+        border-radius: 8px;
+        cursor: pointer;
+  
+        >.menuItemText {
+          font-size: 16px;
+          line-height: 24px;
+          color: #FFFFFF;
+        }
+      }
+    }
+  }
