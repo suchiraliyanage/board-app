@@ -12,7 +12,9 @@
 
 .mainContent {
   flex: 1;
-  padding: 20px;
   overflow-y: auto;
   background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 8%;
 }
