@@ -1,0 +1,66 @@
+[
+    {
+      "task": "Design System",
+      "status": "todo"
+    },
+    {
+      "task": "UI Design",
+      "status": "in-progress"
+    },
+    {
+      "task": "Prototype",
+      "status": "approved"
+    },
+    {
+      "task": "Group Management",
+      "status": "reject"
+    },
+    {
+      "task": "Speech",
+      "status": "todo"
+    },
+    {
+      "task": "Check Clients Feedback",
+      "status": "in-progress"
+    },
+    {
+      "task": "Detail Page",
+      "status": "approved"
+    },
+    {
+      "task": "Design System",
+      "status": "reject"
+    },
+    {
+      "task": "Wireframe",
+      "status": "todo"
+    },
+    {
+      "task": "Copyright",
+      "status": "in-progress"
+    },
+    {
+      "task": "Animation preloaders",
+      "status": "approved"
+    },
+    {
+      "task": "Slider controls",
+      "status": "reject"
+    },
+    {
+      "task": "User inerview",
+      "status": "todo"
+    },
+    {
+      "task": "Filter sorting",
+      "status": "in-progress"
+    },
+    {
+      "task": "Sorting category",
+      "status": "approved"
+    },
+    {
+      "task": "Slider controls",
+      "status": "reject"
+    }
+]

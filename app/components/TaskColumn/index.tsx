@@ -3,15 +3,13 @@ import React from "react";
 import styles from "./index.module.scss";
 import TaskCard from "../TaskCard";
 import DropArea from "../DropArea";
+import { Task } from "../Board/slice";
 
 
 
 interface TaskColumnProps {
     title: string;
-    tasks: {
-        task: string;
-        status: string;
-    }[];
+    tasks: Task[];
     status: string;
     setActiveCard: (index: number | null) => void;
     onDrop: (status: string, position: number) => void;
@@ -25,7 +23,7 @@ const TaskColumn = (props: TaskColumnProps) => {
                 {title}
             </h2>
             <DropArea onDrop={() => onDrop(status, 0)} />
-            {tasks.map(
+            {tasks?.map(
                 (task: { task: string, status: string }, index: number) =>
                     task.status === status && (
                         <React.Fragment key={`task-${index}`}>
