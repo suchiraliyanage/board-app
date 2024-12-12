@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import TaskColumn from '../TaskColumn';
 import { useDispatch, useSelector } from 'react-redux';
 import { boardActions, Task } from './slice';
+import { RootState } from '@/app/store';
 
 interface BoardProps {
     initialTasks: Task[];
@@ -12,8 +13,7 @@ interface BoardProps {
 const Board = (props: BoardProps) => {
   const { initialTasks } = props;
   const dispatch = useDispatch();
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const currentTasks = useSelector((state: any) => state.board.tasks);
+  const currentTasks = useSelector((state: RootState) => state.board.tasks);
   const [activeCard, setActiveCard] = useState<number | null>(null);
 
   useEffect(() => {
@@ -38,33 +38,33 @@ const Board = (props: BoardProps) => {
   return (
     <React.Fragment>
         <TaskColumn
-            title="To Do"
-            tasks={currentTasks}
-            status="todo"
-            setActiveCard={setActiveCard}
-            onDrop={onDrop}
-          />
-          <TaskColumn
-            title="In Progress"
-            tasks={currentTasks}
-            status="in-progress"
-            setActiveCard={setActiveCard}
-            onDrop={onDrop}
-          />
-          <TaskColumn
-            title="Approved"
-            tasks={currentTasks}
-            status="approved"
-            setActiveCard={setActiveCard}
-            onDrop={onDrop}
-          />
-          <TaskColumn
-            title="Reject"
-            tasks={currentTasks}
-            status="reject"
-            setActiveCard={setActiveCard}
-            onDrop={onDrop}
-          />
+          title="To Do"
+          tasks={currentTasks}
+          status="todo"
+          setActiveCard={setActiveCard}
+          onDrop={onDrop}
+        />
+        <TaskColumn
+          title="In Progress"
+          tasks={currentTasks}
+          status="in-progress"
+          setActiveCard={setActiveCard}
+          onDrop={onDrop}
+        />
+        <TaskColumn
+          title="Approved"
+          tasks={currentTasks}
+          status="approved"
+          setActiveCard={setActiveCard}
+          onDrop={onDrop}
+        />
+        <TaskColumn
+          title="Reject"
+          tasks={currentTasks}
+          status="reject"
+          setActiveCard={setActiveCard}
+          onDrop={onDrop}
+        />
     </React.Fragment>
   )
 }

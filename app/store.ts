@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { boardReducer } from "./components/Board/slice";
+import { boardReducer, BoardState } from "./components/Board/slice";
 
 
 const store = configureStore({
@@ -7,5 +7,9 @@ const store = configureStore({
         'board': boardReducer,
     }
 })
+
+export interface RootState {
+    'board': BoardState;
+}
 
 export default store;

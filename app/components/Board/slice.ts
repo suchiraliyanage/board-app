@@ -5,12 +5,14 @@ export interface Task {
     status: string;
 }
 
-interface BoardState {
+export interface BoardState {
     tasks: Task[];
+    searchQuery: string;
 }
 
 export const initialState: BoardState = {
     tasks: localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks") as string) : [],
+    searchQuery: ""
 };
 
 
@@ -21,6 +23,9 @@ export const boardSlice = createSlice({
         setTasks: (state, action: PayloadAction<Task[]>) => {
             localStorage.setItem("tasks", JSON.stringify(action.payload));
             state.tasks = action.payload;
+        },
+        setSearchQuery: (state, action: PayloadAction<string>) => {
+            state.searchQuery = action.payload;
         }
     },
 });
