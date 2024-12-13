@@ -1,22 +1,22 @@
 import React from "react";
 
 import styles from "./index.module.scss";
+import { Task } from "../Board/slice";
 
 interface TaskCardProps {
-    title: string;
-    index: number;
-    setActiveCard: (index: number | null) => void;
+    task: Task;
+    setActiveCard: (task: Task | null) => void;
 }
 
 const TaskCard = (props: TaskCardProps) => {
-    const { title, setActiveCard, index } = props;
+    const { task, setActiveCard } = props;
     return (
         <article className={styles.TaskCard}
             draggable
-            onDragStart={() => setActiveCard(index)}
+            onDragStart={() => setActiveCard(task)}
             onDragEnd={() => setActiveCard(null)}
         >
-            <p className={styles.taskText}>{title}</p>
+            <p className={styles.taskText}>{task?.task}</p>
         </article>
     );
 };

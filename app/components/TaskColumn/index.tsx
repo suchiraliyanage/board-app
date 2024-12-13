@@ -3,7 +3,7 @@ import React, { useMemo } from "react";
 import styles from "./index.module.scss";
 import TaskCard from "../TaskCard";
 import DropArea from "../DropArea";
-import { Task } from "../Board/slice";
+import { Task, TaskStatus } from "../Board/slice";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
 
@@ -12,9 +12,9 @@ import { useSelector } from "react-redux";
 interface TaskColumnProps {
     title: string;
     tasks: Task[];
-    status: string;
-    setActiveCard: (index: number | null) => void;
-    onDrop: (status: string, position: number) => void;
+    status: TaskStatus;
+    setActiveCard: (task: Task | null) => void;
+    onDrop: (status: TaskStatus, position: number) => void;
 }
 
 const TaskColumn = (props: TaskColumnProps) => {
@@ -22,33 +22,31 @@ const TaskColumn = (props: TaskColumnProps) => {
     const searchQuery = useSelector((state: RootState) => state.board.searchQuery); 
 
     const filteredTasks = useMemo(() => {
-        return tasks.filter(
+        return tasks?.filter(
           (task) =>
-            task.status === status &&
             task.task.toLowerCase().includes(searchQuery.toLowerCase())
         );
-    }, [tasks, status, searchQuery]);
+    }, [tasks, searchQuery]);
     return (
         <section className={styles.TaskColumn} key={status}>
-            <h2 className={styles.taskColumnHeading}>
+            <div className={styles.taskColumnHeading}>
                 {title}
-            </h2>
-            <DropArea onDrop={() => onDrop(status, 0)} />
-            {filteredTasks?.map(
-                (task: { task: string, status: string }, index: number) =>
-                    task.status === status && (
-                        <React.Fragment key={`task-${index}`}>
+            </div>
+            <div className={styles.taskListArea}>
+                <DropArea onDrop={() => onDrop(status, 0)} />
+                {filteredTasks?.map(
+                    (task: Task, index: number) =>
+                        <React.Fragment key={`task-${task.taskId}`}>
                             <TaskCard
-                                key={`taskcard-${index}`}
-                                title={task.task}
-                                index={index}
+                                key={`taskcard-${task.taskId}`}
+                                task={task}
                                 setActiveCard={setActiveCard}
                             />
                             <DropArea onDrop={() => onDrop(status, index + 1)} />
                         </React.Fragment>
-                        
-                    )
-            )}
+                )}
+            </div>
+            
         </section>
     );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./index.module.scss";
 import Link from "next/link";
 import {
-  BigTeamIcon,
+  TeamIcon,
   BlackArrowDown,
   DashboardIcon,
   BoardsIcon,
@@ -22,7 +22,7 @@ const Sibebar = () => {
       <div className={styles.sidebarHeader}>
         <div className={styles.workspaceMain}>
           <div className={styles.iconAndContent}>
-            <BigTeamIcon />
+            <TeamIcon />
             <div className={styles.content}>
               <div className={`${styles.subText} poppins-regular`}>
                 workspace

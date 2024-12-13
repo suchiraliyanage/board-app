@@ -1,66 +1,90 @@
-[
+{
+  "TODO": [
     {
+      "taskId": 1,
       "task": "Design System",
-      "status": "todo"
+      "status": "TODO"
     },
     {
-      "task": "UI Design",
-      "status": "in-progress"
-    },
-    {
-      "task": "Prototype",
-      "status": "approved"
-    },
-    {
-      "task": "Group Management",
-      "status": "reject"
-    },
-    {
+      "taskId": 5,
       "task": "Speech",
-      "status": "todo"
+      "status": "TODO"
     },
     {
-      "task": "Check Clients Feedback",
-      "status": "in-progress"
-    },
-    {
-      "task": "Detail Page",
-      "status": "approved"
-    },
-    {
-      "task": "Design System",
-      "status": "reject"
-    },
-    {
+      "taskId": 9,
       "task": "Wireframe",
-      "status": "todo"
+      "status": "TODO"
     },
     {
-      "task": "Copyright",
-      "status": "in-progress"
-    },
-    {
-      "task": "Animation preloaders",
-      "status": "approved"
-    },
-    {
-      "task": "Slider controls",
-      "status": "reject"
-    },
-    {
+      "taskId": 13,
       "task": "User inerview",
-      "status": "todo"
-    },
-    {
-      "task": "Filter sorting",
-      "status": "in-progress"
-    },
-    {
-      "task": "Sorting category",
-      "status": "approved"
-    },
-    {
-      "task": "Slider controls",
-      "status": "reject"
+      "status": "TODO"
     }
-]
+  ],
+  "IN_PROGRESS": [
+    {
+      "taskId": 2,
+      "task": "UI Design",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "taskId": 6,
+      "task": "Check Clients Feedback",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "taskId": 10,
+      "task": "Copyright",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "taskId": 14,
+      "task": "Filter sorting",
+      "status": "IN_PROGRESS"
+    }
+  ],
+  "APPROVED": [
+    {
+      "taskId": 3,
+      "task": "Prototype",
+      "status": "APPROVED"
+    },
+    {
+      "taskId": 7,
+      "task": "Detail Page",
+      "status": "APPROVED"
+    },
+    {
+      "taskId": 11,
+      "task": "Animation preloaders",
+      "status": "APPROVED"
+    },
+    {
+      "taskId": 15,
+      "task": "Sorting category",
+      "status": "APPROVED"
+    }
+  ],
+  "REJECTED": [
+    {
+      "taskId": 4,
+      "task": "Group Management",
+      "status": "REJECTED"
+    },
+    {
+      "taskId": 8,
+      "task": "Design System",
+      "status": "REJECTED"
+    },
+    {
+      "taskId": 12,
+      "task": "Slider controls",
+      "status": "REJECTED"
+    },
+    {
+      "taskId": 16,
+      "task": "Slider controls",
+      "status": "REJECTED"
+    }
+  ]
+}

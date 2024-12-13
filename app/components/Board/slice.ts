@@ -1,12 +1,25 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+export enum TaskStatus {
+    TODO = "TODO",
+    IN_PROGRESS = "IN_PROGRESS",
+    APPROVED = "APPROVED",
+    REJECTED = "REJECTED"
+}
+
 export interface Task {
+    taskId: number;
     task: string;
-    status: string;
+    status: TaskStatus;
 }
 
 export interface BoardState {
-    tasks: Task[];
+    tasks: {
+        TODO: Task[];
+        IN_PROGRESS: Task[];
+        APPROVED: Task[];
+        REJECTED: Task[];
+    };
     searchQuery: string;
 }
 
@@ -20,7 +33,12 @@ export const boardSlice = createSlice({
     name: 'board',
     initialState,
     reducers: {
-        setTasks: (state, action: PayloadAction<Task[]>) => {
+        setTasks: (state, action: PayloadAction<{
+            TODO: Task[];
+            IN_PROGRESS: Task[];
+            APPROVED: Task[];
+            REJECTED: Task[];
+        }>) => {
             localStorage.setItem("tasks", JSON.stringify(action.payload));
             state.tasks = action.payload;
         },
