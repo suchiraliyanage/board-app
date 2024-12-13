@@ -4,9 +4,48 @@
     border-right: 1px solid #e0e0e0;
     >.taskColumnHeading {
         display: flex;
+        width: 100%;
         height: 54px;
         padding: 12px;
         border-bottom: 1px solid #e0e0e0;
+        justify-content: space-between;
+
+        >.leftLabel {
+            display: flex;
+            padding: 4px 24px;
+            width: fit-content;
+            height: 30px;
+            gap: 10px;
+            border-radius: 46px;
+            font: normal 500 14px/22px 'Poppins', sans-serif;
+
+            &.TODO {
+                background-color: #E6E8EC;
+                color: #353945;
+            }
+
+            &.IN_PROGRESS {
+                background-color: #FFA800;
+                color: #353945;
+            }
+
+            &.APPROVED {
+                background-color: #AEE753;
+                color: #353945;
+            }
+
+            &.REJECTED {
+                background-color: #F90430;
+                color: #FFFFFF;
+            }
+        }
+
+        >.rightButton {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            justify-content: flex-end;
+        }
     }
 
     >.taskListArea {

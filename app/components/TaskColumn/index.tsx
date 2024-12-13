@@ -6,6 +6,7 @@ import DropArea from "../DropArea";
 import { Task, TaskStatus } from "../Board/slice";
 import { RootState } from "@/app/store";
 import { useSelector } from "react-redux";
+import { PlusBalckIcon, ThreeDotIcon } from "@/app/assets/svg/home";
 
 
 
@@ -30,7 +31,13 @@ const TaskColumn = (props: TaskColumnProps) => {
     return (
         <section className={styles.TaskColumn} key={status}>
             <div className={styles.taskColumnHeading}>
-                {title}
+                <div className={`${styles.leftLabel} ${styles[status]}`}>
+                    {title}
+                </div>
+                <div className={styles.rightButton}>
+                    <PlusBalckIcon />
+                    <ThreeDotIcon />
+                </div>
             </div>
             <div className={styles.taskListArea}>
                 <DropArea onDrop={() => onDrop(status, 0)} />
